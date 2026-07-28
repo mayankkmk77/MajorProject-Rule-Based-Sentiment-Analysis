@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/analytics.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            Rule-Based Sentiment Analysis
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/analytics">Analytics</a></li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="title-section">
+
+        <h1>Analytics Dashboard</h1>
+
+        <p>Visualization of Customer Review Sentiments</p>
+
+    </section>
+
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats-container">
+
+        <div class="card">
+
+            <h2 id="totalReviews">0</h2>
+
+            <p>Total Reviews</p>
+
+        </div>
+
+        <div class="card positive">
+
+            <h2 id="positiveReviews">0</h2>
+
+            <p>Positive</p>
+
+        </div>
+
+        <div class="card negative">
+
+            <h2 id="negativeReviews">0</h2>
+
+            <p>Negative</p>
+
+        </div>
+
+        <div class="card neutral">
+
+            <h2 id="neutralReviews">0</h2>
+
+            <p>Neutral</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CHARTS ================= -->
+
+    <section class="chart-container">
+
+        <div class="chart-card">
+
+            <h2>Sentiment Distribution</h2>
+
+            <canvas id="pieChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h2>Review Statistics</h2>
+
+            <canvas id="barChart"></canvas>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= WORD CLOUD ================= -->
+
+    <section class="wordcloud">
+
+        <div class="word-card">
+
+            <h2>Most Frequent Words</h2>
+
+            <div class="word-area">
+
+                <span>Excellent</span>
+
+                <span>Amazing</span>
+
+                <span>Worst</span>
+
+                <span>Battery</span>
+
+                <span>Camera</span>
+
+                <span>Good</span>
+
+                <span>Poor</span>
+
+                <span>Worth</span>
+
+                <span>Love</span>
+
+                <span>Quality</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            Rule-Based Sentiment Analysis • CV Raman Global University
+
+        </p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+
+</body>
+
+</html>

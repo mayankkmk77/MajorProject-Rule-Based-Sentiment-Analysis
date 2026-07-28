@@ -1,0 +1,383 @@
+/* ======================================
+   GLOBAL
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+/* ======================================
+   NAVBAR
+====================================== */
+
+.navbar{
+
+    height:70px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 60px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:0;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+.nav-links{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#374151;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#2563eb;
+
+}
+
+/* ======================================
+   TITLE
+====================================== */
+
+.title-section{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+.title-section h1{
+
+    font-size:38px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+
+}
+
+.title-section p{
+
+    color:#6b7280;
+
+    font-size:18px;
+
+}
+
+/* ======================================
+   STAT CARDS
+====================================== */
+
+.stats-container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.card h2{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+}
+
+.positive{
+
+    border-top:5px solid #22c55e;
+
+}
+
+.negative{
+
+    border-top:5px solid #ef4444;
+
+}
+
+.neutral{
+
+    border-top:5px solid #f59e0b;
+
+}
+
+/* ======================================
+   CHARTS
+====================================== */
+
+.chart-container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:50px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+}
+
+.chart-card{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.chart-card h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#2563eb;
+
+}
+
+.chart-card canvas{
+
+    width:100% !important;
+
+    height:350px !important;
+
+}
+
+/* ======================================
+   WORD CLOUD
+====================================== */
+
+.wordcloud{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto auto 60px;
+
+}
+
+.word-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.word-card h2{
+
+    color:#2563eb;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.word-area{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    justify-content:center;
+
+}
+
+.word-area span{
+
+    padding:10px 18px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    border-radius:25px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.word-area span:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:scale(1.08);
+
+}
+
+/* ======================================
+   FOOTER
+====================================== */
+
+footer{
+
+    background:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    box-shadow:0 -2px 8px rgba(0,0,0,.05);
+
+}
+
+footer p{
+
+    color:#6b7280;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+    .stats-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .chart-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:20px;
+
+        gap:15px;
+
+    }
+
+    .title-section h1{
+
+        font-size:30px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .stats-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

@@ -1,19 +1,420 @@
+/* ===========================
+   GOOGLE FONT & RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
 body{
-    background:#f4f6f9;
+    background:#f5f7fb;
+    color:#1f2937;
+    min-height:100vh;
 }
 
-.card{
-    border-radius:15px;
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+
+    width:100%;
+
+    height:70px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 60px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
 }
 
-.card-header{
-    border-radius:15px 15px 0 0 !important;
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
 }
 
-h1{
-    font-weight:bold;
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+
 }
 
-.btn{
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#374151;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#2563eb;
+
+}
+
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+
+    color:#111827;
+
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    color:#6b7280;
+
+    font-size:18px;
+
+}
+
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:30px;
+
+    padding-bottom:60px;
+
+}
+
+
+/* ===========================
+   LEFT CARD
+=========================== */
+
+.review-box{
+
+    flex:1;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.review-box h2{
+
+    margin-bottom:25px;
+
+    color:#2563eb;
+
+}
+
+.review-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    margin-top:15px;
+
+    font-weight:500;
+
+}
+
+.review-box input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d1d5db;
+
     border-radius:8px;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+.review-box input:focus{
+
+    border-color:#2563eb;
+
+}
+
+.review-box textarea{
+
+    width:100%;
+
+    height:180px;
+
+    resize:none;
+
+    padding:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.review-box textarea:focus{
+
+    border-color:#2563eb;
+
+}
+
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    margin-top:25px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ===========================
+   RESULT CARD
+=========================== */
+
+.result-box{
+
+    flex:1;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.result-box h2{
+
+    color:#2563eb;
+
+    margin-bottom:25px;
+
+}
+
+.result-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:18px;
+
+    font-size:17px;
+
+}
+
+.result-item span:last-child{
+
+    font-weight:600;
+
+}
+
+hr{
+
+    margin:25px 0;
+
+    border:none;
+
+    border-top:1px solid #e5e7eb;
+
+}
+
+.result-box h3{
+
+    margin-bottom:15px;
+
+}
+
+#matchedWords{
+
+    padding-left:20px;
+
+}
+
+#matchedWords li{
+
+    margin-bottom:10px;
+
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    background:#ffffff;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:20px;
+
+    box-shadow:0 -2px 8px rgba(0,0,0,.05);
+
+}
+
+footer p{
+
+    color:#6b7280;
+
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+    .container{
+
+        flex-direction:column;
+
+    }
+
+    .navbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:20px;
+
+        gap:15px;
+
+    }
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+
+        padding:40px 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:26px;
+
+    }
+
+    .review-box{
+
+        padding:20px;
+
+    }
+
+    .result-box{
+
+        padding:20px;
+
+    }
+
 }
