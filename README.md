@@ -209,10 +209,10 @@ http://127.0.0.1:5000
 
 # 👨‍💻 Contributors
 
-### Mayank Kumar
+### Mayank Mihir
 Frontend Development • UI Design • Project Integration
 
-### Project Partner
+### Dinesh Kumar Sah
 Backend Development • NLP • Database Integration
 
 ---
