@@ -2,166 +2,50 @@
 // Analytics Dashboard
 // ========================================
 
-// Sample Data (Replace with Flask API later)
+async function loadAnalytics() {
 
-const totalReviews = 120;
-const positiveReviews = 75;
-const negativeReviews = 30;
-const neutralReviews = 15;
+    const res  = await fetch("/api/analytics");
+    const data = await res.json();
 
-// ===============================
-// Update Statistics Cards
-// ===============================
+    document.getElementById("totalReviews").innerText    = data.total;
+    document.getElementById("positiveReviews").innerText = data.positive;
+    document.getElementById("negativeReviews").innerText = data.negative;
+    document.getElementById("neutralReviews").innerText  = data.neutral;
 
-document.getElementById("totalReviews").innerText = totalReviews;
-document.getElementById("positiveReviews").innerText = positiveReviews;
-document.getElementById("negativeReviews").innerText = negativeReviews;
-document.getElementById("neutralReviews").innerText = neutralReviews;
-
-
-// ===============================
-// Pie Chart
-// ===============================
-
-const pieCtx = document.getElementById("pieChart");
-
-new Chart(pieCtx, {
-
-    type: "pie",
-
-    data: {
-
-        labels: [
-
-            "Positive",
-
-            "Negative",
-
-            "Neutral"
-
-        ],
-
-        datasets: [
-
-            {
-
-                data: [
-
-                    positiveReviews,
-
-                    negativeReviews,
-
-                    neutralReviews
-
-                ],
-
-                backgroundColor: [
-
-                    "#22c55e",
-
-                    "#ef4444",
-
-                    "#f59e0b"
-
-                ],
-
+    // Pie Chart
+    new Chart(document.getElementById("pieChart"), {
+        type: "pie",
+        data: {
+            labels: ["Positive", "Negative", "Neutral"],
+            datasets: [{
+                data: [data.positive, data.negative, data.neutral],
+                backgroundColor: ["#22c55e", "#ef4444", "#f59e0b"],
                 borderWidth: 2
-
-            }
-
-        ]
-
-    },
-
-    options: {
-
-        responsive: true,
-
-        plugins: {
-
-            legend: {
-
-                position: "bottom"
-
-            }
-
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: "bottom" } }
         }
+    });
 
-    }
-
-});
-
-
-// ===============================
-// Bar Chart
-// ===============================
-
-const barCtx = document.getElementById("barChart");
-
-new Chart(barCtx, {
-
-    type: "bar",
-
-    data: {
-
-        labels: [
-
-            "Positive",
-
-            "Negative",
-
-            "Neutral"
-
-        ],
-
-        datasets: [
-
-            {
-
+    // Bar Chart
+    new Chart(document.getElementById("barChart"), {
+        type: "bar",
+        data: {
+            labels: ["Positive", "Negative", "Neutral"],
+            datasets: [{
                 label: "Reviews",
-
-                data: [
-
-                    positiveReviews,
-
-                    negativeReviews,
-
-                    neutralReviews
-
-                ],
-
-                backgroundColor: [
-
-                    "#22c55e",
-
-                    "#ef4444",
-
-                    "#f59e0b"
-
-                ],
-
+                data: [data.positive, data.negative, data.neutral],
+                backgroundColor: ["#22c55e", "#ef4444", "#f59e0b"],
                 borderRadius: 8
-
-            }
-
-        ]
-
-    },
-
-    options: {
-
-        responsive: true,
-
-        scales: {
-
-            y: {
-
-                beginAtZero: true
-
-            }
-
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: { y: { beginAtZero: true } }
         }
+    });
+}
 
-    }
-
-});
+loadAnalytics();
